@@ -1,4 +1,114 @@
 body {
-  background-color: black;
-  color: wheat;
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background: teal;
+  color: black;
+}
+li {
+  list-style: none;
+}
+/* .wrapper-img {
+  display: none;
+} */
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  font-size: 34px;
+  text-transform: uppercase;
+}
+.title {
+  font-size: 30px;
+  color: black;
+}
+.photo-gallery {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  color: black;
+  border: 2px solid white;
+}
+.main-item {
+  width: 500px;
+  margin: 30px;
+  padding: 30px;
+  background: white;
+  border: 1px solid black;
+  font-style: inherit;
+}
+
+/* ========= */
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms linear;
+}
+.lightbox.is-open {
+  opacity: 1;
+  pointer-events: initial;
+}
+.lightbox__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.lightbox__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.9);
+  transition: transform 200ms ease-in-out;
+}
+.lightbox__image {
+  width: auto;
+  height: auto;
+  max-height: 100vh;
+  max-width: 100vw;
+}
+.lightbox.is-open .lightbox__content {
+  transform: scale(1);
+}
+.lightbox__button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 200ms ease-in-out;
+  outline: none;
+  /* background-image: url('../images/icon-close.svg'); */
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+}
+.lightbox__button:hover,
+.lightbox__button:focus {
+  background-color: rgba(0, 0, 0, 0.5);
 }
